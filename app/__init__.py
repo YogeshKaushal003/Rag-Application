@@ -14,9 +14,9 @@ def create_app():
     jwt.init_app(app)
 
     from app.auth.routes import auth_bp
-    # from app.chat.routes import chat_bp
+    from app.chat.routes import chat_bp
 
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
-    # app.register_blueprint(chat_bp, url_prefix='/api/chat')
+    app.register_blueprint(chat_bp, url_prefix='/api/chat')
 
     return app
